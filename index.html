@@ -1,45 +1,85 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Spice Trails</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="The Spice Trails — premium cardamom and pepper. Order via WhatsApp.">
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" alt="The Spice Trails logo" class="logo">
+      <span class="brand-text">The Spice Trails</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </header>
 
-<header>
-  <img src="images/logo.jpg" alt="The Spice Trails Logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cardamom.html">Cardamom</a>
-    <a href="pepper.html">Pepper</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Premium Cardamom & Pepper</h1>
+        <p>Small-batch, export-quality spices from trusted growers.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" id="order-now-hero" href="#">Order Now (WhatsApp)</a>
+          <a class="btn" href="products.html">See Products</a>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <!-- decorative -->
+      </div>
+    </section>
 
-<div class="hero">
-  <h1>Premium Export Quality Spices</h1>
-  <p>Fresh from the farms of Kerala.</p>
-</div>
+    <section class="features">
+      <article class="feature card animate-on-scroll">
+        <h3>Fresh Harvest</h3>
+        <p>Picked and packed with care — full aroma guaranteed.</p>
+      </article>
+      <article class="feature card animate-on-scroll">
+        <h3>Export Quality</h3>
+        <p>Graded and packed to meet international standards.</p>
+      </article>
+      <article class="feature card animate-on-scroll">
+        <h3>Direct Order</h3>
+        <p>Order via WhatsApp for fast, personal service.</p>
+      </article>
+    </section>
 
-<div class="products">
-  <div class="product">
-    <h2>Cardamom</h2>
-    <p>Fresh, aromatic, and export quality.</p>
-    <a href="https://wa.me/919000000000?text=I want to order Cardamom"><button>Order Now</button></a>
-  </div>
+    <section class="featured-products">
+      <h2>Featured</h2>
+      <div class="product-grid">
+        <div class="product animate-on-scroll">
+          <img src="assets/images/cardamom.jpg" alt="Cardamom" loading="lazy">
+          <h4>Cardamom</h4>
+          <p>Whole green cardamom — premium export quality.</p>
+          <a class="btn btn-outline" href="products.html#cardamom">View</a>
+        </div>
+        <div class="product animate-on-scroll">
+          <img src="assets/images/pepper.jpg" alt="Pepper" loading="lazy">
+          <h4>Pepper</h4>
+          <p>Hand-sorted black pepper — bold & aromatic.</p>
+          <a class="btn btn-outline" href="products.html#pepper">View</a>
+        </div>
+      </div>
+    </section>
 
-  <div class="product">
-    <h2>Pepper</h2>
-    <p>Strong, premium-grade black pepper.</p>
-    <a href="https://wa.me/919000000000?text=I want to order Pepper"><button>Order Now</button></a>
-  </div>
-</div>
+    <section id="contact" class="contact animate-on-scroll">
+      <h2>Contact</h2>
+      <p>WhatsApp: <a id="whatsapp-number" href="#">+91 89717 36524</a></p>
+      <p>Email: <a href="mailto:info@thespicetrails.com">info@thespicetrails.com</a></p>
+    </section>
+  </main>
 
-<footer>
-  © 2025 The Spice Trails
-</footer>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> The Spice Trails — Premium Export Quality Spices</p>
+  </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
