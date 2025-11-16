@@ -1,48 +1,82 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Products — The Spice Trails</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — The Spice Trails</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Products — Cardamom & Pepper from The Spice Trails">
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand"><div class="logo">TS</div><h1>The Spice Trails</h1></div>
-    <nav><div class="navlinks">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" alt="The Spice Trails logo" class="logo">
+      <span class="brand-text">The Spice Trails</span>
+    </a>
+    <nav class="nav">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div></nav>
-  </div>
-</header>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </header>
 
-<main class="container" style="padding-top:28px">
-  <h2>Our Products</h2>
-  <div class="products">
-    <article class="card">
-      <img src="assets/product-1.jpg" alt="Cardamom" style="height:160px;object-fit:cover">
-      <h3>Cardamom</h3>
-      <p>Fragrant green cardamom, handpicked and packed fresh.</p>
-      <div style="display:flex;gap:8px;margin-top:10px">
-        <a class="btn green" href="https://wa.me/+919999999999?text=Hi!%20I%20want%20Cardamom" target="_blank">Order Now</a>
+  <main>
+    <section class="products-hero">
+      <h1>Products</h1>
+      <p>Selected small-batch spices, ready to ship.</p>
+    </section>
+
+    <section id="cardamom" class="product-detail animate-on-scroll">
+      <div class="product-row">
+        <div class="product-image">
+          <img src="assets/images/cardamom.jpg" alt="Cardamom pack" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h2>Cardamom</h2>
+          <p><strong>Variety:</strong> Green cardamom (premium grade)</p>
+          <p><strong>Packaging:</strong> 100g / 250g / 500g / bulk</p>
+          <p><strong>Notes:</strong> Aromatic, hand-sorted, no artificial preservatives.</p>
+          <div class="product-actions">
+            <a class="btn btn-primary" href="#" id="order-cardamom">Order Now (WhatsApp)</a>
+            <a class="btn btn-outline" href="mailto:info@thespicetrails.com">Request Quote</a>
+          </div>
+        </div>
       </div>
-    </article>
 
-    <article class="card">
-      <img src="assets/product-2.jpg" alt="Black Pepper" style="height:160px;object-fit:cover">
-      <h3>Black Pepper</h3>
-      <p>Rich, pungent peppercorns from our farms.</p>
-      <div style="display:flex;gap:8px;margin-top:10px">
-        <a class="btn green" href="https://wa.me/+919999999999?text=Hi!%20I%20want%20Black%20Pepper" target="_blank">Order Now</a>
+      <!-- user asked: "Add add below picture in the cardamom product" -->
+      <figure class="cardamom-gallery animate-on-scroll">
+        <figcaption>Cardamom product image</figcaption>
+        <img src="assets/images/cardamom.jpg" alt="Cardamom closeup" loading="lazy" class="gallery-img">
+      </figure>
+    </section>
+
+    <hr>
+
+    <section id="pepper" class="product-detail animate-on-scroll">
+      <div class="product-row reverse">
+        <div class="product-image">
+          <img src="assets/images/pepper.jpg" alt="Black pepper" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h2>Pepper</h2>
+          <p><strong>Variety:</strong> Black pepper (SS/SSS)</p>
+          <p><strong>Packaging:</strong> 100g / 250g / 500g / bulk</p>
+          <p><strong>Notes:</strong> Bold aroma, clean sorting and grading.</p>
+          <div class="product-actions">
+            <a class="btn btn-primary" href="#" id="order-pepper">Order Now (WhatsApp)</a>
+            <a class="btn btn-outline" href="mailto:info@thespicetrails.com">Request Quote</a>
+          </div>
+        </div>
       </div>
-    </article>
+    </section>
 
-  </div>
-</main>
+  </main>
 
-<footer class="footer"><div class="container">© The Spice Trails</div></footer>
+  <footer class="site-footer">
+    <p>© <span id="year2"></span> The Spice Trails</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
