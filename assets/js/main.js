@@ -1,52 +1,72 @@
-// small helper for the WhatsApp number — update if needed
-const PHONE = "+918971736524"; // <-- replace if different format (country code required)
-const DEFAULT_MESSAGE = encodeURIComponent("Hello, I want to order cardamom / pepper. Please share price & pack sizes.");
+// WhatsApp number
+const PHONE = "+918971736524";
+const DEFAULT_MESSAGE = encodeURIComponent(
+  "Hello, I want to order cardamom / pepper. Please share price & pack sizes."
+);
 
-// order buttons
-document.addEventListener('DOMContentLoaded', () => {
-  // set current year
-  const y = new Date().getFullYear();
-  document.getElementById('year')?.textContent = y;
-  document.getElementById('year2')?.textContent = y;
-
-  // hero order button
-  const heroBtn = document.getElementById('order-now-hero');
-  heroBtn && heroBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const url = `https://wa.me/${PHONE.replace(/\D/g,'')}?text=${DEFAULT_MESSAGE}`;
-    window.open(url, '_blank');
+document.addEventListener("DOMContentLoaded", () => {
+  // current year
+  document.querySelectorAll(".year").forEach((el) => {
+    el.textContent = new Date().getFullYear();
   });
+
+  // universal open WA function
+  const openWA = (msg) => {
+    const url = `https://wa.me/${PHONE.replace(/\D/g, "")}?text=${encodeURIComponent(
+      msg
+    )}`;
+    window.open(url, "_blank");
+  };
+
+  // hero button
+  const heroBtn = document.getElementById("order-now-hero");
+  if (heroBtn) {
+    heroBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWA("Hello, I'm interested in Cardamom / Pepper.");
+    });
+  }
 
   // product buttons
-  document.getElementById('order-cardamom')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const msg = encodeURIComponent("Hello, I'd like to order Cardamom (please share price and minimum quantity).");
-    const url = `https://wa.me/${PHONE.replace(/\D/g,'')}?text=${msg}`;
-    window.open(url, '_blank');
-  });
-  document.getElementById('order-pepper')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const msg = encodeURIComponent("Hello, I'd like to order Pepper (please share price and minimum quantity).");
-    const url = `https://wa.me/${PHONE.replace(/\D/g,'')}?text=${msg}`;
-    window.open(url, '_blank');
-  });
+  const cardamomBtn = document.getElementById("order-cardamom");
+  if (cardamomBtn) {
+    cardamomBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWA("Hello, I'd like to order Cardamom.");
+    });
+  }
 
-  // attach phone link
-  const phoneElem = document.getElementById('whatsapp-number');
+  const pepperBtn = document.getElementById("order-pepper");
+  if (pepperBtn) {
+    pepperBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWA("Hello, I'd like to order Pepper.");
+    });
+  }
+
+  // whatsapp link in footer
+  const phoneElem = document.getElementById("whatsapp-number");
   if (phoneElem) {
-    phoneElem.href = `https://wa.me/${PHONE.replace(/\D/g,'')}`;
+    phoneElem.href = `https://wa.me/${PHONE.replace(/\D/g, "")}`;
     phoneElem.textContent = PHONE;
   }
 
-  // intersection observer for scroll animations
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, {threshold: 0.12});
+  // scroll animations (safe mode)
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => io.observe(el));
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      io.observe(el);
+    });
+  }
 });
