@@ -26,15 +26,48 @@ body{
 .nav a{color:inherit;text-decoration:none;padding:6px 8px;border-radius:8px}
 .nav a:hover{background:#f3f6f3}
 
-/* hero */
+/* hero (FIXED visually messy gradient + added overlay) */
 .hero{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;
-  text-align:center;background:linear-gradient(180deg,var(--green) 0%, #ffffff00 35%);
-  color:#fff;
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:70px 20px;
+  text-align:center;
+  color:#ffffff;
+  background:linear-gradient(180deg, var(--green) 0%, rgba(20,90,51,0.75) 40%, rgba(20,90,51,0.15) 75%, #ffffff 100%);
 }
-.hero h1{font-size:clamp(1.6rem,3.6vw,2.6rem);margin:8px 0 6px}
-.hero p{max-width:44ch;margin:0 auto 18px;opacity:.95}
-.hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+/* overlay to keep text readable ALWAYS */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.08) 50%, transparent 100%);
+  z-index:1;
+}
+
+.hero h1,
+.hero p,
+.hero .hero-cta{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  margin:8px 0 10px;
+  letter-spacing:0.5px;
+  font-weight:700;
+}
+
+.hero p{
+  max-width:44ch;
+  margin:0 auto 18px;
+  opacity:.95;
+}
+
+.hero-cta{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center
+}
 
 .btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;cursor:pointer;border:1px solid rgba(0,0,0,.06)}
 .btn-primary{background:var(--accent);color:#fff;border:none;box-shadow:0 6px 18px rgba(46,139,87,.12)}
@@ -77,7 +110,7 @@ body{
 @media (max-width:760px){
   .nav{display:none}
   .menu-toggle{display:inline-block;border:0;background:transparent;font-size:20px}
-  .hero{padding:36px 14px}
+  .hero{padding:50px 14px}
   .product-row{flex-direction:column}
   .logo{height:40px;width:40px}
 }
