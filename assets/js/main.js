@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
       openWA("Hello, I'm interested in Cardamom / Pepper.");
     });
   }
+  // mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+    });
+  }
 
   // product buttons
   const cardamomBtn = document.getElementById("order-cardamom");
