@@ -114,3 +114,22 @@ body{
   .product-row{flex-direction:column}
   .logo{height:40px;width:40px}
 }
+
+/* mobile menu open style */
+.nav.nav-open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  gap: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.nav.nav-open a {
+  padding: 8px 4px;
+}
